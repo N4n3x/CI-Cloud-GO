@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
-	guuid "github.com/google/uuid"
 )
 
 type Todo struct {
@@ -42,11 +42,11 @@ func GetAllTodos(c *gin.Context) {
 	}
 
 	// Iterate through the returned cursor.
-    for cursor.Next(context.TODO()) {
-				var todo Todo
-        cursor.Decode(&todo)
-        todos = append(todos, todo)
-		}
+	for cursor.Next(context.TODO()) {
+		var todo Todo
+		cursor.Decode(&todo)
+		todos = append(todos, todo)
+	}
 
 	c.JSON(http.StatusOK, gin.H{
 		"status":  http.StatusOK,
@@ -62,10 +62,10 @@ func CreateTodo(c *gin.Context) {
 	title := todo.Title
 	body := todo.Body
 	completed := todo.Completed
-	id := guuid.New().String()
+	id := uuid.New().String()
 
 	newTodo := Todo{
-		ID: id,
+		ID:        id,
 		Title:     title,
 		Body:      body,
 		Completed: completed,
@@ -97,7 +97,7 @@ func GetSingleTodo(c *gin.Context) {
 	todo := Todo{}
 	err := collection.FindOne(context.TODO(), bson.M{"id": todoId}).Decode(&todo)
 	if err != nil {
-			log.Printf("Error while getting a single todo, Reason: %v\n", err)
+		log.Printf("Error while getting a single todo, Reason: %v\n", err)
 		c.JSON(http.StatusNotFound, gin.H{
 			"status":  http.StatusNotFound,
 			"message": "Todo not found",
@@ -108,7 +108,7 @@ func GetSingleTodo(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"status":  http.StatusOK,
 		"message": "Single Todo",
-		"data": todo,
+		"data":    todo,
 	})
 	return
 }
@@ -120,18 +120,18 @@ func EditTodo(c *gin.Context) {
 	completed := todo.Completed
 
 	newData := bson.M{
-            "$set": bson.M{
-            "completed":       completed,
-            "updated_at": time.Now(),
-            },
-        }
+		"$set": bson.M{
+			"completed":  completed,
+			"updated_at": time.Now(),
+		},
+	}
 
 	_, err := collection.UpdateOne(context.TODO(), bson.M{"id": todoId}, newData)
 	if err != nil {
 		log.Printf("Error, Reason: %v\n", err)
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"status": 500,
-			"message":  "Something went wrong",
+			"status":  500,
+			"message": "Something went wrong",
 		})
 		return
 	}
@@ -144,7 +144,7 @@ func EditTodo(c *gin.Context) {
 }
 
 func DeleteTodo(c *gin.Context) {
-todoId := c.Param("todoId")
+	todoId := c.Param("todoId")
 
 	_, err := collection.DeleteOne(context.TODO(), bson.M{"id": todoId})
 	if err != nil {
