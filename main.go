@@ -1,10 +1,10 @@
 package main
 
 import (
-	"CI-Cloud-GO/config"
-	"CI-Cloud-GO/routes"
 	"log"
 
+	"github.com/N4n3x/CI-Cloud-GO/config"
+	"github.com/N4n3x/CI-Cloud-GO/routes"
 	"github.com/gin-gonic/gin"
 )
 

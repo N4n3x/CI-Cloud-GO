@@ -1,8 +1,9 @@
 package routes
 
 import (
-	"CI-Cloud-GO/controllers"
 	"net/http"
+
+	"github.com/N4n3x/CI-Cloud-GO/controllers"
 
 	"github.com/gin-gonic/gin"
 )

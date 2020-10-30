@@ -1,10 +1,11 @@
 package config
 
 import (
-	"CI-Cloud-GO/controllers"
 	"context"
 	"log"
 	"time"
+
+	"github.com/N4n3x/CI-Cloud-GO/controllers"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
