@@ -1,5 +1,3 @@
 steps:
-    - name: install
-      args: ['go', 'get', '-d', './...']
     - name: golang
       args: ['go', 'build', '.']
