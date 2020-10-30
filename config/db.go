@@ -1,6 +1,7 @@
 package config
 
 import (
+	"CI-Cloud-GO/controllers"
 	"context"
 	"log"
 	"time"
@@ -8,8 +9,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
-
-	"github.com/cavdy-play/go_mongo/controllers"
 )
 
 func Connect() {

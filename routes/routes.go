@@ -1,10 +1,10 @@
 package routes
 
 import (
+	"CI-Cloud-GO/controllers"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/cavdy-play/go_mongo/controllers"
 )
 
 func Routes(router *gin.Engine) {
