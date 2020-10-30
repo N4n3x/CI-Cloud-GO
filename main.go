@@ -1,15 +1,14 @@
 package main
 
 import (
+	"CI-Cloud-GO/config"
+	"CI-Cloud-GO/routes"
 	"log"
 
 	"github.com/gin-gonic/gin"
-
-	"github.com/cavdy-play/go_mongo/config"
-	"github.com/cavdy-play/go_mongo/routes"
 )
 
-func main()  {
+func main() {
 	// Database
 	config.Connect()
 

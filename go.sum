@@ -1,7 +1,5 @@
 github.com/DataDog/zstd v1.4.4 h1:+IawcoXhCBylN7ccwdwf8LOH2jKq7NavGpEPanrlTzE=
 github.com/DataDog/zstd v1.4.4/go.mod h1:1jcaCB/ufaK+sKp1NBhlGmpz41jOoPQ35bpF36t7BBo=
-github.com/cavdy-play/go_db v0.0.0-20200119001631-7bb67a6cf354 h1:VlHquOQQaDhNfYYGv/koVtqgNJQ90rah87zC4bDKVI0=
-github.com/cavdy-play/go_db v0.0.0-20200119001631-7bb67a6cf354/go.mod h1:bePBVHL6b4K9Ps4QPXxufpvF+Yv8jY4h/XnwXjUZIZg=
 github.com/codemodus/kace v0.5.1 h1:4OCsBlE2c/rSJo375ggfnucv9eRzge/U5LrrOZd47HA=
 github.com/codemodus/kace v0.5.1/go.mod h1:coddaHoX1ku1YFSe4Ip0mL9kQjJvKkzb9CfIdG1YR04=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
